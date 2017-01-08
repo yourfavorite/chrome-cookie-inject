@@ -8,17 +8,85 @@
   <head>
     <title>Popup</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
       body {
-        width: 200px;
-        height: 100px;
-        font-family: menu;
-        font-size: 100%;
+        min-width: 300px;
+        /*height: 100px;*/
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 16px;
+      }
+
+      header {
+        margin: 0;
+        color: #fff;
+        background: #28334B;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 10px 0;
+        padding: 0;
+        font-size: 24px;
       }
 
       label {
         display: block;
-        font-size: 75%;
+        display: block;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        color: #28334B;
+      }
+
+      input {
+        width: 100%;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin: 0 0 10px 0;
+        padding: 0 15px;
+        line-height: 20px;
+        height: 40px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: inset 0 0 0 1px rgba(40, 51, 75, 0.2);
+        font-family: inherit;
+        font-size: inherit;
+      }
+
+      .wrapper {
+        width: 100%;
+        padding: 20px;
+      }
+
+      button {
+        margin: 0 0 10px 0;
+        padding: 10px 20px;
+        cursor: pointer;
+
+        color: #fff;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
         text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
+
+        background-color: #28334B;
+        border: none;
+        border-radius: 100px;
+        outline: none;
+      }
+
+      button:hover {
+        background-color: #314061;
       }
     </style>
     <script src="js/jquery.min.js"></script>
@@ -26,14 +94,19 @@
     <script src="ui.js"></script>
   </head>
   <body>
-    <div>
-      <label for="url">URL</label>
-      <input type="text" id="url" />
+    <header>
+      <h1>Cookie Inject</h1>
+    </header>
+    <div class="wrapper">
+      <div>
+        <label for="url">URL</label>
+        <input type="text" id="url" />
+      </div>
+      <div>
+        <label for="cookies">Cookies</label>
+        <input type="text" id="cookies" />
+      </div>
+      <button class="save" id="save">GO!</button>
     </div>
-    <div>
-      <label for="cookies">Cookies</label>
-      <input type="text" id="cookies" />
-    </div>
-    <button class="save" id="save">GO!</button>
   </body>
 </html>
